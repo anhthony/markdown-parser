@@ -34,7 +34,8 @@ public class MarkdownParse {
             }
             else 
             {
-                toReturn.add(markdown.substring(openParen + 1, closeParen));
+                String link = markdown.substring(openParen + 1, closeParen);
+                toReturn.add(link);
             }
             currentIndex = closeParen + 1;
         }
