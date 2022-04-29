@@ -24,7 +24,7 @@ public class MarkdownParseTest {
 
     @Test
     public void testGetLinksMyTest() throws IOException {
-        Path fileName = Path.of("/Users/Anthony/Documents/GitHub/markdown-parser/MyTest.md");
+        Path fileName = Path.of("./MyTest.md");
         String content = Files.readString(fileName);
         List<String> expectedList = List.of("https://google.com", "google.html", "abc.com");
         assertEquals(expectedList, MarkdownParse.getLinks(content));
@@ -32,7 +32,7 @@ public class MarkdownParseTest {
 
     @Test
     public void testGetLinksFarApart() throws IOException {
-        Path fileName = Path.of("/Users/Anthony/Documents/GitHub/markdown-parser/FarApart.md");
+        Path fileName = Path.of("./FarApart.md");
         String content = Files.readString(fileName);
         List<String> expectedList = List.of();
         assertEquals(expectedList, MarkdownParse.getLinks(content));
@@ -40,7 +40,7 @@ public class MarkdownParseTest {
 
     @Test
     public void testGetLinksImage() throws IOException {
-        Path fileName = Path.of("/Users/Anthony/Documents/GitHub/markdown-parser/ImageReference.md");
+        Path fileName = Path.of("./ImageReference.md");
         String content = Files.readString(fileName);
         List<String> expectedList = List.of();
         assertEquals(expectedList, MarkdownParse.getLinks(content));
@@ -48,7 +48,7 @@ public class MarkdownParseTest {
 
     @Test
     public void testGetLinks2() throws IOException {
-        Path fileName = Path.of("/Users/Anthony/Documents/GitHub/markdown-parser/test-file2.md");
+        Path fileName = Path.of("./test-file2.md");
         String content = Files.readString(fileName);
         List<String> expectedList = List.of("https://something.com", "some-page.html");
         assertEquals(expectedList, MarkdownParse.getLinks(content));
@@ -56,7 +56,7 @@ public class MarkdownParseTest {
 
     @Test
     public void testGetLinks3() throws IOException {
-        Path fileName = Path.of("/Users/Anthony/Documents/GitHub/markdown-parser/test-file3.md");
+        Path fileName = Path.of("./test-file3.md");
         String content = Files.readString(fileName);
         List<String> expectedList = List.of();
         assertEquals(expectedList, MarkdownParse.getLinks(content));
@@ -64,7 +64,7 @@ public class MarkdownParseTest {
 
     @Test
     public void testGetLinks4() throws IOException {
-        Path fileName = Path.of("/Users/Anthony/Documents/GitHub/markdown-parser/test-file4.md");
+        Path fileName = Path.of("./test-file4.md");
         String content = Files.readString(fileName);
         List<String> expectedList = List.of();
         assertEquals(expectedList, MarkdownParse.getLinks(content));
@@ -72,7 +72,7 @@ public class MarkdownParseTest {
 
     @Test
     public void testGetLinks5() throws IOException {
-        Path fileName = Path.of("/Users/Anthony/Documents/GitHub/markdown-parser/test-file5.md");
+        Path fileName = Path.of("./test-file5.md");
         String content = Files.readString(fileName);
         List<String> expectedList = List.of();
         assertEquals(expectedList, MarkdownParse.getLinks(content));
@@ -80,7 +80,7 @@ public class MarkdownParseTest {
 
     @Test
     public void testGetLinks6() throws IOException {
-        Path fileName = Path.of("/Users/Anthony/Documents/GitHub/markdown-parser/test-file6.md");
+        Path fileName = Path.of("./test-file6.md");
         String content = Files.readString(fileName);
         List<String> expectedList = List.of();
         assertEquals(expectedList, MarkdownParse.getLinks(content));
@@ -88,7 +88,7 @@ public class MarkdownParseTest {
 
     @Test
     public void testGetLinks7() throws IOException {
-        Path fileName = Path.of("/Users/Anthony/Documents/GitHub/markdown-parser/test-file7.md");
+        Path fileName = Path.of("./test-file7.md");
         String content = Files.readString(fileName);
         List<String> expectedList = List.of();
         assertEquals(expectedList, MarkdownParse.getLinks(content));
@@ -96,7 +96,7 @@ public class MarkdownParseTest {
 
     @Test
     public void testGetLinks8() throws IOException {
-        Path fileName = Path.of("/Users/Anthony/Documents/GitHub/markdown-parser/test-file8.md");
+        Path fileName = Path.of("./test-file8.md");
         String content = Files.readString(fileName);
         List<String> expectedList = List.of();
         assertEquals(expectedList, MarkdownParse.getLinks(content));
