@@ -116,6 +116,12 @@ public class MarkdownParseTest {
     }
 
 
+    @Test
+    public void testGrading() throws IOException
+    {
+        List<String> expect = List.of();
+        assertEquals(MarkdownParse.getLinks("[]("), expect);
+    }
 
 
 }
