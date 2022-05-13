@@ -20,21 +20,26 @@ public class MarkdownParse {
             {
                 break;
             }
+            //account for a starting white space before the link
             else if((openBracket - 1) < 0)
             {
                 break;
             }
+            //check if it's an image
             if((markdown.substring(openBracket -1, openBracket).equals("!"))) 
             {
                 
             }
+            //check that it is a link by having "](" next together
             else if(!markdown.substring(closeBracket + 1, closeBracket+2).equals("("))
             {
                 
             }
             else 
             {
+
                 String link = markdown.substring(openParen + 1, closeParen);
+                //check that it is a link because links have a "."
                 if(link.indexOf(".") != -1)
                 {
                     toReturn.add(link);

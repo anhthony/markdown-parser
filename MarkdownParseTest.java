@@ -123,5 +123,24 @@ public class MarkdownParseTest {
         assertEquals(MarkdownParse.getLinks("[]("), expect);
     }
 
+    @Test
+    public void testFile2() throws IOException {
+        Path fileName = Path.of("./testfile2.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> fileLinks = MarkdownParse.getLinks(content);
+        String[] links = {"https://google.com/", "https://en.wikipedia.org/", "mailto:rmasserf@ucsd.edu"};
+        assertEquals(links[0], fileLinks.get(0));
+        assertEquals(links[1], fileLinks.get(1));
+        assertEquals(links[2], fileLinks.get(2));
+    }
+
+    @Test
+    public void test3() throws IOException {
+        Path fileName = Path.of("./test3.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> fileLinks = MarkdownParse.getLinks(content);
+        assertEquals("https://google.com/", fileLinks.get(0));
+    }
+
 
 }
