@@ -142,5 +142,9 @@ public class MarkdownParseTest {
         assertEquals("https://google.com/", fileLinks.get(0));
     }
 
+    @Test
+    public void testVim() {
+	assertEquals(1 + 1, 2);
+    }
 
 }
