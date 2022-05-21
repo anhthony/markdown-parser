@@ -147,4 +147,30 @@ public class MarkdownParseTest {
 	assertEquals(1 + 1, 2);
     }
 
+    @Test
+    public void testMySnip1() throws IOException {
+        Path fileName = Path.of("/Users/Anthony/Documents/GitHub/markdown-parser/snip1.md");
+        String content = Files.readString(fileName);
+        List<String> expectedList = List.of("`google.com", "google.com", "ucsd.edu");
+        assertEquals(expectedList, MarkdownParse.getLinks(content));
+    }
+
+    @Test
+    public void testMySnip2() throws IOException {
+        Path fileName = Path.of("/Users/Anthony/Documents/GitHub/markdown-parser/snip2.md");
+        String content = Files.readString(fileName);
+        List<String> expectedList = List.of("a.com", "a.com(())", "example.com");
+        assertEquals(expectedList, MarkdownParse.getLinks(content));
+    }
+
+    @Test
+    public void testMySnip3() throws IOException {
+        Path fileName = Path.of("/Users/Anthony/Documents/GitHub/markdown-parser/snip3.md");
+        String content = Files.readString(fileName);
+        List<String> expectedList = List.of("https://www.twitter.com", 
+            "https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule", 
+            "https://cse.ucsd.edu/");
+
+        assertEquals(expectedList, MarkdownParse.getLinks(content));
+    }
 }
